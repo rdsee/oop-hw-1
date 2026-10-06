@@ -164,7 +164,7 @@ if __name__ == "__main__":
         account3 = BankAccount(
             name="Tom",
             surname="Cock",
-            balance=float("inf"),
+            balance=100,
             wallet_status="frozen",
             currency="KZT"
         )
@@ -210,6 +210,13 @@ if __name__ == "__main__":
     account.get_balance()
     account.withdraw(20.5)
     account.get_balance()
+
+    try:
+        account3.deposit(100)
+    except AccountFrozenError as e:
+        print(e)
+
+
 
 
 
